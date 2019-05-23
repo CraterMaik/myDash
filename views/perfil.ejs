@@ -1,0 +1,269 @@
+
+<%- include _head.ejs -%>
+    <header>
+      <%- include header.ejs -%>  
+    </header>
+    
+    <main>
+      <div class="row norown center-align bg-ndark p-top">
+        <div class="col s12">
+          <div>
+            <% if(user.avatar) { %>
+            <img class="circle responsive-img" src="https://cdn.discordapp.com/avatars/<%=user.id%>/<%=user.avatar%>.png?size=512" width="200px" height="200px" alt="">
+            <% } else { %> 
+            <img class="circle responsive-img" src="https://images-ext-1.discordapp.net/external/NAqkMZNPJgDiWBrSDqniAD1_sbWfiPqF4mgZyCtVs6s/https/discordapp.com/assets/6debd47ed13483642cf09e832ed0bc1b.png?width=231&height=231" width="200px" height="200px" alt="">
+            <% } %>
+            <p>
+              <span class="title-profile">
+                 <%= `${user.username}` %>
+              </span>  
+            </p> 
+          </div>   
+        </div>
+    
+      </div>
+     
+      <div class="container container-tab">
+         <div class="row">
+          <div class="col s12">
+            <ul class="tabs background-gris"> 
+ 
+              <li class="tab col s3"><a class="active" href="#info">Perfil</a></li>
+              <li class="tab col s3"><a href="#servidores">Servidores</a></li>
+              <li class="tab col s3"><a href="#send-msg">Enviar Mensaje</a></li>
+              <li class="tab col s3"><a href="#red">Red</a></li>
+
+            </ul>
+          </div>
+          <div id="info" class="col s12"><!-- col s12 -->
+            <div class="tab-perfil">
+              <h1><%= `${user.username}` %></h1>   
+              <h2>
+                <a href="user/<%= `${user.id}` %>">
+                  <%= `@${user.username}#${user.discriminator}` %>
+                </a>
+                
+              </h2>
+              
+              <h2>
+
+                
+                <div class>
+                  <div class="right">
+                    <a href="#modalEdit"  class="waves-effect btn bg-btn-discord modal-trigger" ><i class="material-icons right">edit</i>Editar</a>
+                  </div>
+                  <div class="">
+                    <p class="flow-text"> 
+                      <%= `"${dbuser.info}"` %> 
+                    </p>
+                  </div>
+                   
+
+                    <!-- Modal Structure -->
+                    <div id="modalEdit" class="modal">
+                      <div class="modal-content">
+                        <h4>Editar información de perfil</h4>
+                          <br>
+                          <div class="row">
+                            <form class="col s12" method="POST" action="/perfil/edit">
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <i class="material-icons prefix">info_outline</i>
+                                  <input id="icon_prefix" type="text" name="newedit" class="validate">
+                                  <label for="icon_prefix"><%= `${dbuser.info}` %> </label>
+                                </div>
+                                <div class="right pd-2">
+                                   <button class="btn waves-effect bg-btn" type="submit" name="action">Guardar
+                                    <i class="material-icons right">done</i> <!-- Hola, te acuerdas cuando recien estabas haciendo Readme.md? xd // si-->
+                                  </button>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                      </div>
+                      
+                    </div>
+                  
+                </div>
+
+              </h2>
+              
+              <h2 class="h2-perfil">
+                Nivel:
+              </h2> 
+              <div class="data-level">
+                <div class="left"> <%=`Nivel: ${dbuser.nivel}` %> </div>
+                
+                <div class="right"> <%=`Nivel: ${nNivel}` %> </div> 
+              </div>
+              <div class="progress">
+                <div class="determinate" style="width: <%= `${percent}` %>%"></div>
+              </div>
+              <div class="center"> <%= `${xpstats}` %> </div>
+              <section>
+                
+                <h2 class="h2-perfil"> Estadisticas generales:</h2>              
+                   <div class="row center-align row-stats">
+                    <div class="col s3">
+                      <div class="box-stats z-depth-3">
+                        <p>
+                        Nivel
+                        </p>
+                        <span class="text-stats">
+                           <%=`${dbuser.nivel}` %>
+                        </span>
+                      </div>
+
+                    </div>
+                    <div class="col s3">
+                      <div class="box-stats z-depth-3">
+                        <p>
+                        Experiencia
+                        </p>
+                        <span class="text-stats">
+                          <%= `${dbuser.xp}` %>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="col s3">
+                      <div class="box-stats z-depth-3">
+                        <p>
+                        Me encorazona...
+
+                        </p>
+                        <span class="text-stats">
+                          <%= `${dbuser.rep}` %>
+                        </span>
+                      </div>
+                    </div> 
+                    <div class="col s3">
+                      <div class="box-stats z-depth-3">
+                        <p>
+                        Seguidores
+                        </p>
+                        <span class="text-stats">
+                          <%= `${dbuser.like}` %>
+                        </span>   
+                      </div>
+                    </div>
+                    <div class="col s3">
+                      <div class="box-stats z-depth-3">
+                        <p>
+                        Vistas
+                        </p>
+                        <span class="text-stats">
+                          <%= `${vistas}` %>
+                        </span>   
+                      </div>
+                    </div>
+                  </div>
+              </section>
+            </div>
+
+          </div>
+          <div id="servidores" class="col s12"><!-- col s12-->
+              <p>
+                En proceso, solo es un modelo de vista
+              </p>
+                <ul class="collection">
+                  <li class="collection-item avatar">
+                    <img src="https://portalmybot.com/image/logo-dimencionando.png" alt="" class="circle">
+                    <span class="title">MyBOT Team</span>
+                    <p>1160 miembros<br>
+               
+                    </p>
+                    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                  </li>
+                  
+                </ul>
+                <ul class="collection">
+                  <li class="collection-item avatar">
+                  <img src="https://cdn.discordapp.com/icons/576213565808050189/5d7f92e182d2906b18ae076683393a48.png" alt="" class="circle">
+                  <span class="title">myDash test</span>
+                    <p>
+                      <%= `${client.guilds.get("576213565808050189").memberCount}`%> miembros
+                    </p>
+                  </li>
+            </ul>
+                             
+            </div>
+           
+            <div id="send-msg" class="col s12">
+              <p>
+                Enviar Mensajes con ID de canal
+              </p>
+              <form id="send-msg">
+                Color <input class="jscolor" name="color"><br>
+                Título  <input name="titulo"><br>
+                Descripción <input name="msg"><br>
+                ID Canal  <input name="canal"><br>
+                <input class="btn btn-success" type="submit">
+              </form>
+                    <script>
+        $(document).ready(function() {
+    $('#send-msg').submit(function(e) {
+        e.preventDefault();
+        $.ajax({
+            type: "POST", //Esta URL no existe por eso no manda
+            url: "https://mydash.glitch.me/api/send-msg",
+            data: $(this).serialize(),
+            success: function(resp) {
+                if (resp.status === "sent") {
+                    alert("Mensaje enviado correctamente")
+                } else if (resp.status === "error") {
+                    alert(`Error al enviar el mensaje: ${resp.error}`)
+                }
+            }
+        });
+    });
+
+});
+      </script>
+            </div>
+           
+          <div id="red" class="col s12">
+            <div class="content-other-profile">
+              <h2 class="h2-perfil"> Seguidores:</h2> 
+              <br>
+              <ul class="collection">
+                <% seguidores.map(datos => {  %>
+                <li class="collection-item avatar">
+                  <img src="<%=client.users.get(datos.idsecond).displayAvatarURL %>" alt="" class="circle">
+                  <span class="title"><%=client.users.get(datos.idsecond).username%></span>
+                  <p><%=client.users.get(datos.idsecond).tag%> <br>
+                      <%= datos.idsecond %>
+                  </p>
+                  <a href="/user/<%= datos.idsecond%>" class="secondary-content"><i class="material-icons">grade</i></a>
+                </li>
+                <% })%>
+              </ul>
+              <h2 class="h2-perfil"> Siguiendo:</h2> 
+              <br>
+              <ul class="collection">
+                <% siguiendo.map(datos => {  %>
+                <li class="collection-item avatar">
+                  <img src="<%=client.users.get(datos.idfirst).displayAvatarURL %>" alt="" class="circle">
+                  <span class="title"><%=client.users.get(datos.idfirst).username%></span>
+                  <p><%=client.users.get(datos.idfirst).tag%> <br>
+                      <%= datos.idfirst %>
+                  </p>
+                  <a href="/user/<%= datos.idfirst%>" class="secondary-content"><i class="material-icons">grade</i></a>
+                </li>
+                <% })%>
+              </ul>
+            </div>
+            
+          </div> 
+
+        </div>
+      </div>
+
+      
+    </main>
+
+    <footer>
+      <%- include footer.ejs -%>  
+    </footer>
+
+<%- include _footer.ejs -%>
+

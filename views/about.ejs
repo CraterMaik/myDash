@@ -1,0 +1,24 @@
+
+
+<%- include _head.ejs -%>
+    <header>
+      <%- include header.ejs -%>  
+    </header>
+
+<main>
+<div class="col s12 center-align">
+  <img class="circle responvive-img" src="https://cdn.discordapp.com/icons/576213565808050189/5d7f92e182d2906b18ae076683393a48.jpg">
+  <p>myDash es un proyecto de aprendizaje iniciado por Crater, <br>Proposito es aprender sobre el desarrollo de páginas web (Dashboard) y<br>
+   control de datos con la API de Discord (Bots de Discord).
+  </p>
+  <h1>
+    <%= `¿Deseas ingresar?`%>
+  </h1>
+  <a href="<%= login === 'si' ? '/perfil' : '/login' %>" class="waves-effect waves-light btn bg-btn"><i class="material-icons left ">account_circle</i><%= login === 'si' ? 'Perfil' : 'Login' %></a>
+  </div>
+</main>
+    <footer>
+      <%- include footer.ejs -%>  
+    </footer>
+
+<%- include _footer.ejs -%>

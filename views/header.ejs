@@ -1,0 +1,16 @@
+<nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">myDash</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="https://mydash.glitch.me/about" target="_black"><%= `Acerca de ${client.user.username}`%></a></li>
+        <li><a onclick="changeTheme()" style="cursor:pointer;">Change Theme</a></li>
+        <li><a href="https://github.com/CraterMaik" target="_blank">GitHub</a></li>
+        <li><a href="https://portalmybot.com/" target="_blank">Portal</a></li>
+
+        <li><a href="<%= login === 'si' ? '/perfil' : '/login' %>"><%=status%></a></li>
+        <%if(login === 'si'){%>
+        <li><a href="/logout">Salir</a></li>
+        <%}%>
+      </ul>
+    </div>
+  </nav>
