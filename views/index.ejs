@@ -1,0 +1,31 @@
+
+
+<%- include _head.ejs -%>
+    <header>
+      <%- include header.ejs -%>  
+    </header>
+    
+    <main>
+        <div class="container valign-wrapper p-top">
+          <div class="row">
+            <div class="col s12 center-align">
+               <img class="floating responsive-img circle img-index" src="https://portalmybot.com/image/logo-dimencionando.png">
+              <h2>
+                Bienvenido a myDash
+              </h2> 
+            </div>
+            <div class="col s6 right-align">
+              <a href="<%= login === 'si' ? '/perfil' : '/login' %>" class="waves-effect waves-light btn bg-btn"><i class="material-icons left ">account_circle</i><%= login === 'si' ? 'Perfil' : 'Login' %></a>
+            </div>
+            <div class="col s6">
+              <a href="https://discord.gg/YBBQnB5" target="_blank" class="waves-effect waves-light btn bg-btn-discord"><i class="material-icons left">closed_caption</i>Discord</a>
+            </div>
+          </div>
+        </div>
+    </main>
+
+    <footer>
+      <%- include footer.ejs -%>
+    </footer>
+
+<%- include _footer.ejs -%>

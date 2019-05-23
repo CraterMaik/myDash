@@ -1,0 +1,246 @@
+body {
+  font-family: 'Patua One', cursive;
+  background: #ffffff;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  
+}
+
+nav {
+  background-color: #7289da;
+  padding: 0 15px;
+}
+nav li a {
+  color: #ffffff;
+}
+
+nav .brand-logo {
+  color: #ffffff;
+}
+main {
+  flex: 1 0 auto;
+  color: #23272a;
+}
+
+.title-profile {
+  font-size: 30px;
+}
+.tabs {
+  background-color: #23272a;
+}
+.collection {
+  border: none;
+}
+.collection .collection-item {
+  border-bottom: 1px solid #e0e0e0;
+  background-color: transparent;
+}
+
+.norown {
+margin-bottom: 0;
+}
+.mt-3 {
+  margin-top: 20vh;
+}
+.pd-2 {
+  padding: 20px;
+}
+.p-top {
+  padding-top: 20px;
+}
+.color-discord{
+  color:#7289DA;
+}
+.bg-ndark{
+  background: #F3F3F5;
+}
+.bg-btn {
+  background: linear-gradient(to bottom,#FFCA49 0%,#FF8A17 100%);
+  color: #23272A;
+}
+.bg-btn:hover {
+  background: linear-gradient(to bottom,#FFCA49 0%,#FFCA49 100%);
+  color: #23272A;
+}
+.bg-btn-discord {
+
+  background: linear-gradient(to bottom,#7289DA 0%, #5472DE 100%);
+}
+.bg-btn-discord:hover {
+  background: linear-gradient(to bottom,#7289DA 0%, #7289DA 100%);
+}
+footer {
+  color: #ffffff;
+}
+.img-index {
+ width: 300px;
+}
+
+
+/*progress nivel*/
+.progress {
+  background-color: #464646;
+  height: 15px;
+}
+.progress .determinate {
+  background-color: #FFCA49;
+}
+/* Perfil css*/
+
+.background-gris {
+  background-color: #F3F3F5 !important;
+}
+
+.container-tab h1{
+  font-size: 2rem;
+  margin:0;
+}
+.container-tab h2{
+  font-size: 1rem;
+  margin:0;
+}
+.container-tab .data-level{
+  margin-top: 10px;
+  padding: 0 20px;
+}
+.tab-perfil {
+ padding: 30px 20px;
+}
+.container-tab .h2-perfil {
+  font-size: 1.5rem;
+  color: #EE6E73;
+  margin-top: 30px;
+}
+
+.row-stats .box-stats {
+  padding: 30px 0;
+  margin-top: 10px;
+}
+.container-tab .text-stats {
+  color: #FFCA49;
+  font-size: 1.8rem;
+}
+
+
+/* float */
+
+.disp-flex {
+  display: flex;
+}
+
+/*no ver*/
+.ocultar {
+  display: none;
+}
+/* icon error 404*/
+
+.error-icon {
+  font-size: 150px;
+  color: darkslategrey;
+}
+
+/* Modal  Edit*/
+.modal{
+  background-color: #2C2F33;
+  
+}
+.modal .modal-footer{
+  background-color: #2C2F33;
+  padding: 0 30px;
+}
+.modal input {
+  color: white;
+}
+
+/* animation */
+/* Bob */
+@-webkit-keyframes hvr-bob {
+	0% {
+		-webkit-transform: translateY(-8px);
+		transform: translateY(-8px);
+	}
+
+	50% {
+		-webkit-transform: translateY(-4px);
+		transform: translateY(-4px);
+	}
+
+	100% {
+		-webkit-transform: translateY(-8px);
+		transform: translateY(-8px);
+	}
+}
+
+@keyframes hvr-bob {
+	0% {
+		-webkit-transform: translateY(-8px);
+		transform: translateY(-8px);
+	}
+
+	50% {
+		-webkit-transform: translateY(-4px);
+		transform: translateY(-4px);
+	}
+
+	100% {
+		-webkit-transform: translateY(-8px);
+		transform: translateY(-8px);
+	}
+}
+
+@-webkit-keyframes hvr-bob-float {
+	100% {
+		-webkit-transform: translateY(-8px);
+		transform: translateY(-8px);
+	}
+}
+
+@keyframes hvr-bob-float {
+	100% {
+		-webkit-transform: translateY(-8px);
+		transform: translateY(-8px);
+	}
+}
+.animate {
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	-webkit-animation-name: hvr-bob-float, hvr-bob;
+	animation-name: hvr-bob-float, hvr-bob;
+	-webkit-animation-duration: .3s, 1.5s;
+	animation-duration: .3s, 1.5s;
+	-webkit-animation-delay: 0s, .3s;
+	animation-delay: 0s, .3s;
+	-webkit-animation-timing-function: ease-out, ease-in-out;
+	animation-timing-function: ease-out, ease-in-out;
+	-webkit-animation-iteration-count: 1, infinite;
+	animation-iteration-count: 1, infinite;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	-webkit-animation-direction: normal, alternate;
+	animation-direction: normal, alternate;
+	display: inline-block;
+	vertical-align: middle;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.floating {
+ 
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  
+}
+
+@keyframes floating { /* By; Free de la Hoya */
+    from {
+        transform: translate(0, 0px);
+    }
+    65% {
+        transform: translate(0, 15px);
+    }
+    to {
+        transform: translate(0, -0px);
+    }
+}

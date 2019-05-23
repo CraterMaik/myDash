@@ -1,0 +1,161 @@
+<%- include _head.ejs -%>
+    <header>
+      <%- include header.ejs -%>  
+    </header>
+    
+    <main>
+    <div class="row norown center-align bg-ndark p-top">
+        <div class="col s12">
+          <div>
+           
+            <img class="circle responsive-img" src="<%= `${client.users.get(user.idusu).displayAvatarURL}` %>" width="200px" height="200px" alt="">
+            
+            <p>
+              <span class="title-profile">
+                 <%= `${client.users.get(user.idusu).username}` %>
+              </span>  
+            </p> 
+          </div>   
+        </div>
+    
+      </div>
+      <div class="container container-tab">
+         <div class="tab-perfil">
+              <div>
+                
+                <% if(follow === 'no'){ %>
+                  <!--favorite_border--> 
+                  <div class="right disp-flex <% if(validar === "si") {%>ocultar<%}%>">
+                  
+                 
+                    <form class="col s12 mg-l-1" method="POST" action="/user/addlike/<%= user.idusu %>">
+                      <button class="btn-floating btn-large waves-effect waves-light" type="submit" name="action">
+                        <i class="material-icons left">favorite</i>
+                      </button>
+                    </form>
+                    
+                    <form class="col s12 mg-l-1" method="POST" action="/user/seguir/<%= user.idusu %>">
+                      <button class="btn waves-effect bg-btn-discord" type="submit" name="action">Seguir
+                        <i class="material-icons left">add_circle_outline</i>
+                      </button>
+                    </form>
+
+                  </div>
+                  <% } else {%>
+                  <div class="right disp-flex <% if(validar === "si") {%>ocultar<%}%>">
+                      
+                    <form class="col s12 mg-l-1" method="POST" action="/user/addlike/<%= user.idusu %>">
+                      <button class="btn-floating btn-large waves-effect waves-light" type="submit" name="action">
+                        <i class="material-icons left">favorite</i>
+                      </button>
+                    </form>
+                    
+                      <form class="col s12 mg-l-1" method="POST" action="/user/unseguir/<%= user.idusu %>">
+                        <button class="btn waves-effect bg-btn"name="action">Siguiendo
+                          <i class="material-icons left">check</i>
+                        </button>
+                      </form>
+                     
+
+
+                  </div>
+                <% }%>
+                <div class="">
+                  <h1><%= `${client.users.get(user.idusu).username}` %></h1>   
+                  <h2>
+                    <a href="./<%= `${client.users.get(user.idusu).id}`%>">
+                      <%= `@${client.users.get(user.idusu).tag}` %>
+                    </a>
+
+                  </h2>
+                </div>   
+
+              </div>
+
+              <h2>
+                 <p class="flow-text"> <!-- porque no le pones graphics tags a la pagina? -->
+                  <%= `"${user.info}"` %> 
+                </p>
+                
+              </h2>
+              <h2 class="h2-perfil">
+                Nivel:
+              </h2> 
+              <div class="data-level">
+                <div class="left"> <%=`Nivel: ${user.nivel}` %> </div>
+                
+                <div class="right"> <%=`Nivel: ${nNivel}` %> </div> 
+              </div>
+              <div class="progress">
+                <div class="determinate" style="width: <%= `${percent}` %>%"></div>
+              </div>
+              <div class="center"> <%= `${xpstats}` %> </div>
+              <section>
+                
+                <h2 class="h2-perfil"> Estadisticas generales:</h2>              
+                   <div class="row center-align row-stats">
+                    <div class="col s3">
+                      <div class="box-stats z-depth-3">
+                        <p>
+                        Nivel
+                        </p>
+                        <span class="text-stats">
+                           <%=`${user.nivel}` %>
+                        </span>
+                      </div>
+
+                    </div>
+                    <div class="col s3">
+                      <div class="box-stats z-depth-3">
+                        <p>
+                        Experiencia
+                        </p>
+                        <span class="text-stats">
+                          <%= `${user.xp}` %>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="col s3">
+                      <div class="box-stats z-depth-3">
+                        <p>
+                          Me encorazona...
+
+                        </p>
+                        <span class="text-stats">
+                          <%= `${user.rep}` %>
+                        </span>
+                      </div>
+                    </div> 
+                    <div class="col s3">
+                      <div class="box-stats z-depth-3">
+                        <p>
+                        Seguidores
+                        </p>
+                        <span class="text-stats">
+                          <%= `${user.like}` %>
+                        </span>   
+                      </div>
+                    </div>
+                    <div class="col s3">
+                      <div class="box-stats z-depth-3">
+                        <p>
+                        Vistas
+                        </p>
+                        <span class="text-stats">
+                          <%= `${vistas}` %>
+                        </span>   
+                      </div>
+                    </div>
+                  </div>
+              </section>
+            </div>
+      </div>
+         
+      
+    </main>
+
+    <footer>
+      <%- include footer.ejs -%>  
+    </footer>
+
+<%- include _footer.ejs -%>

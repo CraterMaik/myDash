@@ -1,0 +1,36 @@
+//mini modulo by Kantimplora
+
+function kan() {
+
+}
+
+function trash(uno,dos) {
+
+}
+
+async function crater() {
+
+}
+  module.exports = {
+    kan: kan,
+    trash: trash,
+    crater: crater
+  }
+  //es un ejemplo de como lo uso
+  
+CRATER:
+Listo acabamos:
+Cosas pendientes, rep y likes del perfil.
+
+Kantimplora:
+Ok vamos a editar el README /   OYE CRATER una pregunta como hacen para definir user en los ejs? / me muestran donde lo pusieron?
+                                                                                                            
+Crater: desde las rutas debes agregar los parametros a mostrar como objetos;                                  
+                                                                                                              
+Trash: no estaria mal hacer un mapeo de los servidores que esta el usuario de dueño o manager :f:             
+                                                                                                              
+Crater: Si, vamos paso a paso primero estamos en Perfil :piensa :estemen 
+
+Crater: voy me voy vuelvo luego, creo que debo crear un chat aqui ok no.. pa eso esta discord :good stemen:
+
+aca no andan los emojis :( K: vamo a discord buen trabajo todos
